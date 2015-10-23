@@ -1,0 +1,22 @@
+
+#(C)reate > POST   /table    - not yet implemented
+(R)ead   > GET    /table[/id]
+(R)ead   > GET    /table[/column/content]
+#(U)pdate > PUT    /table/id - not yet implemented 
+(D)elete > DELETE /table/id
+
+#####  Get all rows from the "temp_whitelist" table  #####
+$ curl 'https://rtbh.sec.domain.com/apiv1/temp_whitelist/'
+$ curl 'https://rtbh.sec.domain.com/apiv1/blacklist/' 
+$ curl 'https://rtbh.sec.domain.com/apiv1/temp_whitelist/?limit=50&by=inserttime&order=desc'
+
+##### Get a single row from the "blacklist" table (where "sourceip" is the IP)  #####
+$ curl 'https://rtbh.sec.domain.com/apiv1/blacklist/sourceip/75.145.237.46'
+$ curl 'https://rtbh.sec.domain.com/apiv1/temp_whitelist/sourceip/108.59.253.198'
+
+#####  Delete row id from table blacklist or temp_whitelist  #####
+$ curl -X DELETE 'https://rtbh.sec.domain.com/apiv1/blacklist/14228'
+
+#####  Insert new IP into blacklist table  #####
+$ curl -H "Content-Type: application/json" -X POST -d '{"sourceip":"1.2.3.5", "comment":"mysql-api"}' "https://rtbh.sec.domain.com/apiv1/blacklist/"
+$ curl -H "Content-Type: application/json" -X POST -d '{"sourceip":"1.2.3.5"}' "https://rtbh.sec.domain.com/apiv1/blacklist/"

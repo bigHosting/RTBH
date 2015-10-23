@@ -1,0 +1,110 @@
+/* main css declarations for password strength */
+
+body {
+	margin:0px;
+	padding:0px;
+	font-family:Arial, Helvetica, sans-serif;
+	background-color:#fff;
+	}
+	
+#passworddetails {
+	display: none;
+}
+
+.LDAP {
+	text-align: right;
+	font-size: 12px;
+}
+
+.off {
+	list-style-image: url(16-em-cross.png);
+	vertical-align: top;
+}
+
+.on {
+	list-style-image: url(16-em-check.png);
+}
+
+.req {
+	vertical-align: top;
+	list-style-image: url(16-em-cross.png);
+	color: green;
+}
+
+.normal {
+	font-size:80%; color:black; text-transform:none
+}
+
+#loginform-logo {
+  float:                  left;
+}
+
+div.loginform {
+  margin:                 auto;
+  margin-top:             10%;
+  border:                 1px solid #4096b8;
+  padding:                1em;
+  width:                  40em;
+  /*background:             transparent url(Clock.png) no-repeat scroll 99% 98%;*/
+}
+
+dl.loginform {
+  margin:                 0;
+  padding:                0;
+}
+
+.loginform dt {
+  position:               relative;
+  left:                   0;
+  top:                    1.1em;
+  width:                  8em;
+  font-weight:            bold;
+  font-size:              0.9em;
+}
+
+.loginform dd {
+  margin:                 0 0 0 9em;
+  padding: 0 0 0em 90px;
+
+}
+
+.loginform-level{
+  display:                none;
+}
+
+.loginform-id {
+  visibility:             hidden;
+}
+
+/*.loginform input, .loginform select {
+  border:                 1px inset #ccc;
+  width:                  21em;
+}*/
+
+/*.loginform input[type='submit'] {
+  border:                 1px outset #ccc;
+  width:                  11em;
+  margin:                 1em;
+}*/
+#loading_zone {
+  float:                  right;
+  margin-left:            1em;
+}
+
+a.LSsession_recoverPassword {
+  float:                  right;
+  font-size:              0.8em;
+  text-decoration:        none;
+  color:                  #4096b8;
+  font-weight:            bold;
+}
+
+.LSsession_recoverPassword_hidden {
+  visibility:             hidden;
+}
+
+span {
+  white-space: nowrap;
+}
+
+

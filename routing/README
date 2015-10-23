@@ -1,0 +1,6 @@
+
+You need:
+
+1. 1 linux server running bird routing daemon. Linux server will download RBL database and push each entry into kernel table 10 (see bind.conf)
+2. 1 upstream cisco router ( e.g. 7K ) configured having ipv4 & ipv6 configured. Router will communicate with BIRD daemon and apply BGP blocks
+

@@ -1,0 +1,2 @@
+*/5 * * * * root /usr/bin/perl /localservices/sbin/rtbh.pl > /dev/null 2>&1
+33 */4 * * * root /usr/bin/perl /localservices/sbin/rtbh-resync.pl > /dev/null 2>&1

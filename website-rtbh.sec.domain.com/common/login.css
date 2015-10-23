@@ -1,0 +1,942 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+	margin:0;
+	padding:0;
+	outline:0px;
+}
+
+img {
+	border:0px;
+}
+textarea {overflow:auto; resize:none;}
+
+body, html, input, textarea, select, ul, li {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#5f6062;
+}
+
+body{
+	background-color:#f2f2f2;
+	background-image:url(../common/body.jpg);
+	background-repeat:repeat-x;
+	width:100%;
+
+}
+html {
+	height:100%;overflow-y:scroll;
+}
+a {
+	font-family:  verdana, Helvetica, sans-serif, Helvetica, sans-serif;
+	font-size:12px;
+	color:#000000;
+	text-decoration:underline;
+
+}
+a:hover {
+	text-decoration:none;
+}
+a img {
+	border:none;
+}
+p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#5f6062;
+}
+
+
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:18px;
+	color:#221e1f;
+	margin-top:5px;
+}
+
+.p_left_top_text {
+	font-size:11px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	margin-left:23px;
+	margin-top:20px;
+}
+.p_user_info {
+	text-align:right;
+	margin-top:21px;
+	font-weight:bold;
+}
+.p_comment_info {
+	margin-top:20px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:11px;
+	color:#221e1f;
+	margin-bottom:8px;
+}
+.user_category_user {
+	color:#7dc243;
+}
+.user_category_manager {
+	color:#3787c8;
+}
+.user_category_admin {
+	color:#e91321;
+}
+.date {
+	font-weight:normal;
+}
+
+
+
+/*----------------------------------------------------*/
+.main {width:964px; margin:0 auto; text-align:left;}
+
+.top {height:108px;}
+.top_info_block {height:51px;}
+.top_left_info {width:50%; float:left;}
+.top_right_info {width:50%; float:left;}
+.content {width:950px; margin-left:7px;}
+.text {margin-left:5px;	}
+.domain_buttons {height:50px; padding-top:10px;}
+
+.left {width:226px; float:left;}
+.right {width:520px; float:left; margin-left:15px;}
+.footer {width:1000px;margin:0 auto;
+}
+.clear {width:100%; height:0px; line-height:0px; display:block; clear:both; overflow:hidden; font-size:0px;}
+.domain_issue {float:right; width:565px; margin-top:3px;}
+.domain_issue_admin {float:right; width:470px; margin-top:3px;}
+.domain_issue_user {float:right; width:660px; margin-top:3px;}
+.domain_issue_form {width:950px;}
+.select_block{float:right;width:200px;background-image:url(../common/select.jpg);width:175px;height:27px; margin-top:2px;}
+.checkbox_block{background-image:url(../common/checkbox_block.jpg);background-repeat:no-repeat;width:100px;height:27px; margin-top:2px; margin-left:10px;line-height:24px;float:left; font-size:12px; color:#5f6062; font-weight:bold;}
+.domain_lists_block1 {width:270px;float:left;}
+.domain_lists_block2 {width:186px;float:left;}
+.domain_lists_block3 {width:140px;float:left;}
+.domain_lists_block4 {width:202px;float:left;}
+.domain_lists_block5 {width:114px;float:left;}
+.domain_lists_block6 {width:30%;float:left;}
+.text_block2 {padding-left:30px;}
+.text_block3 {margin-left:-30px;}
+.batch_lists_block1 {width:140px;float:left;}
+.batch_lists_block2 {width:105px;float:left;}
+.batch_lists_block3 {width:80px;float:left;}
+.batch_lists_block_partner {width:50%;float:left;}
+.login_block_text {margin-left:30px;padding-top:30px;}
+.login_block_holder {width:310px;}
+/* -------------------------------------------Images------------------------------------------ */
+.qatool_text{
+	//background-image:url(../common/qatool_text2.png);
+	background-repeat:no-repeat;
+	width:249px;
+	height:33px;
+	margin-bottom:40px;
+}
+.line {
+	background-image:url(../common/line.jpg);
+	background-repeat:repeat;
+	width:auto;
+	height:2px;
+}
+.logo {
+	position:absolute;
+	margin-left:30px;
+	margin-top:13px;
+	width:154px;
+	height:70px;
+	background-image:url(../common/logo2.png);
+	background-repeat:no-repeat;
+}
+.logo2 {
+	position:absolute;
+	margin-left:194px;
+	margin-top:13px;
+	width:154px;
+	height:70px;
+	background-image:url(../common/logo2.png);
+	background-repeat:no-repeat;
+}
+.logo3 {
+	position:absolute;
+	margin-left:360px;
+	margin-top:13px;
+	width:154px;
+	height:70px;
+	background-image:url(../common/logo2.png);
+	background-repeat:no-repeat;
+}
+
+
+#top {
+	background-image:url(../common/top.jpg);
+	background-repeat:no-repeat;
+	width:694px;
+	height:224px;
+
+}
+
+.image_holder {
+	width:308px;
+	height:330px;
+	border:1px solid #dcdcdc;
+	background-color:#f2f2f2;
+	float:left;
+}
+.image_holder_margin {
+	margin-left:10px;
+}
+
+.block_top {
+	background-image:url(../common/block_top.png);
+	background-repeat:no-repeat;
+	width:964px;
+	height:7px;
+}
+.block_bg {
+	background-image:url(../common/block_bg.png);
+	background-repeat:repeat-y;
+	width:964px;
+	height:100%;
+}
+.block_bottom {
+	background-image:url(../common/block_bottom.png);
+	background-repeat:no-repeat;
+	width:964px;
+	height:6px;
+	margin-top:-3px;
+}
+
+.login_block {
+	background-image:url(../common/login_block.png);
+	background-repeat:no-repeat;
+	width:310px;
+	height:311px;
+}
+
+#overlay {position:fixed; left:0px; right:0px; top:0px; bottom:0px; background:url(../common/bg_overlay.png); z-index:100;}
+.block_popup {margin-left:-155px; position:absolute; left:50%; top:210px; z-index:101;}
+
+/*-----image labels----------------*/
+.image_label1 {width:320px;float:left;margin-top:5px;font-weight:bold;font-family:tahoma, Helvetica, sans-serif;margin-left:10px;}
+.image_label2 {width:320px;float:left;margin-top:5px;font-weight:bold;font-family:tahoma, Helvetica, sans-serif;}
+.image_label3 {width:300px;float:left;margin-top:5px;font-weight:bold;font-family:tahoma, Helvetica, sans-serif;}
+/*---------------------------------*/
+
+.domain_link, .domain_link a {font-family:Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold; color:#221e1f; margin-bottom:10px; text-decoration:none; padding-top:5px;margin-left:7px;}
+.domain_link a:hover {text-decoration:underline;}
+
+/*----------------------Top Form Buttons------------------------------*/
+.precutover{position:absolute;margin-top:70px;margin-left:340px;width:172px;height:37px; z-index:1}
+.precutover_on{position:absolute;margin-top:70px;margin-left:340px;width:172px;height:37px; z-index:2}
+.postcutover{position:absolute;margin-top:70px;margin-left:480px;width:172px;height:37px; z-index:1}
+.postcutover_on{position:absolute;margin-top:70px;margin-left:480px;width:172px;height:37px; z-index:2}
+.cp{position:absolute;margin-top:70px;margin-left:625px;width:172px;height:37px; z-index:1}
+
+.precutover_btn {width:172px;height:37px;background-image:url(../common/precutover_off.png);background-repeat:no-repeat;z-index:1;display:block;background-color:transparent; color:transparent; border:none; cursor:pointer;}
+.precutover_btn:hover, .precutover_btn_on {width:172px;height:37px;background-image:url(../common/precutover_on.png);background-repeat:no-repeat;z-index:2;display:block;background-color:transparent; color:transparent; border:none; cursor:pointer;}
+.postcutover_btn {width:172px;height:37px;background-image:url(../common/postcutover_off.png);background-repeat:no-repeat;z-index:1;background-color:transparent; color:transparent; border:none; cursor:pointer;}
+.postcutover_btn:hover, .postcutover_btn_on {width:172px;height:37px;background-image:url(../common/postcutover_on.png);background-repeat:no-repeat;z-index:2;background-color:transparent; color:transparent; border:none; cursor:pointer;}
+.migrated{position:absolute;margin-top:70px;margin-left:340px;width:172px;height:37px; z-index:1}
+.migrated_domains_btn {width:206px;height:37px;background-image:url(../common/migrated_domains_btn_big.png);background-repeat:no-repeat;z-index:1;display:block;background-color:transparent; color:transparent; border:none;}
+.cp_btn {width:172px;height:37px;background-image:url(../common/cp_off.png);background-repeat:no-repeat;z-index:1;background-color:transparent; color:transparent; border:none; cursor:pointer;}
+.cp_btn:hover {width:172px;height:37px;background-image:url(../common/cp_on.png);background-repeat:no-repeat;z-index:2;background-color:transparent; color:transparent; border:none; cursor:pointer;}
+/*--------------------------------------------------------------------*/
+
+/* ------------------------------Buttons -------------------------------------*/
+.logout_btn_blue {
+	float:right;
+	margin-right:7px;
+	margin-top:12px;
+	margin-left:33px;
+	width:92px;
+	height:32px;
+	display:block;
+	font-size:14px;
+	color:#f2f2f2;
+	font-family:Arial, Helvetica, sans-serif;
+	line-height:32px;
+	text-align:center;
+	background-image:url(../common/logout_btn_blue.png);
+	background-repeat:no-repeat;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+.batchs_btn_blue {
+	float:left;
+	margin-right:7px;
+	margin-top:12px;
+	margin-left:7px;
+	width:92px;
+	height:32px;
+	display:block;
+	font-size:14px;
+	color:#f2f2f2;
+	font-family:Arial, Helvetica, sans-serif;
+	line-height:32px;
+	text-align:center;
+	background-image:url(../common/logout_btn_blue.png);
+	background-repeat:no-repeat;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+
+.grey_btn {
+	float:left;
+	width:81px;
+	height:32px;
+	display:block;
+	font-size:12px;
+	color:#5e5e5e;
+	font-family:Arial, Helvetica, sans-serif;
+	line-height:32px;
+	text-align:center;
+	background-image:url(../common/grey_btn.png);
+	background-repeat:no-repeat;
+	text-decoration:none;
+	font-weight:bold;
+	text-transform:uppercase;
+	margin-left:7px;
+	margin-right:7px;
+}
+
+
+/* ------------------------------domain list headers -------------------------------------*/
+.header_bg {
+	background-image:url(../common/header_bg.png);
+	background-repeat:no-repeat;
+	width:950px;
+	height:43px;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#221e1f;
+	cursor:pointer;
+	line-height:43px;
+	padding-left:15px;
+	padding-bottom:3px;
+}
+
+.yellow_h {
+	position:relative;
+	border-radius:5px;
+	background-color:#ffe75e;
+	border-top:1px solid #e1e0e0;
+	border-left:1px solid #e1e0e0;
+	border-right:1px solid #bcbcbc;
+	border-bottom:1px solid #bcbcbc;
+	box-shadow: 1px 1px 0px #e5e5e5;
+	width:932px;
+	height:38px;
+	font-weight:bold;
+	cursor:pointer;
+	line-height:38px;
+	padding-left:15px;
+	margin-bottom:3px;
+	background: -moz-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.14) 50%) #ffe860; /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0.14))) #ffe860; /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #ffe860; /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #ffe860; /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #ffe860; /* IE10+ */
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #ffe860; /* W3C */
+}
+.yellow_h .domain_lists_block1, .yellow_h .domain_lists_block2, .yellow_h .domain_lists_block3, .yellow_h .domain_lists_block4, .yellow_h .domain_lists_block5 {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#221e1f;
+}
+.green_h {
+	position:relative;
+	border-radius:5px;
+	background-color:#70bc3f;
+	border-top:1px solid #e1e0e0;
+	border-left:1px solid #e1e0e0;
+	border-right:1px solid #bcbcbc;
+	border-bottom:1px solid #bcbcbc;
+	box-shadow: 1px 1px 0px #e5e5e5;
+	width:932px;
+	height:38px;
+	font-weight:bold;
+	cursor:pointer;
+	line-height:38px;
+	padding-left:15px;
+	margin-bottom:3px;
+	background: -moz-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.14) 50%) #70bc3f; /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(47%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0.14))) #70bc3f; /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 0%) #70bc3f; /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #70bc3f; /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #70bc3f; /* IE10+ */
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #70bc3f; /* W3C */
+}
+.green_h .domain_lists_block1, .green_h .domain_lists_block2, .green_h .domain_lists_block3, .green_h .domain_lists_block4, .green_h .domain_lists_block5, .green_h .domain_lists_block6 {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#221e1f;
+}
+.red_h {
+	position:relative;
+	border-radius:5px;
+	background-color:#f22f45;
+	border-top:1px solid #e1e0e0;
+	border-left:1px solid #e1e0e0;
+	border-right:1px solid #bcbcbc;
+	border-bottom:1px solid #bcbcbc;
+	box-shadow: 1px 1px 0px #e5e5e5;
+	width:932px;
+	height:38px;
+	font-weight:bold;
+	cursor:pointer;
+	line-height:38px;
+	padding-left:15px;
+	margin-bottom:3px;
+	background: -moz-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.14) 50%) #f22f45; /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(47%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0.14))) #f22f45; /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 0%) #f22f45; /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #f22f45; /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #f22f45; /* IE10+ */
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #f22f45; /* W3C */
+}
+.red_h .domain_lists_block1, .red_h .domain_lists_block2, .red_h .domain_lists_block3, .red_h .domain_lists_block4, .red_h .domain_lists_block5 {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#221e1f;
+}
+.blue_h {
+	position:relative;
+	border-radius:5px;
+	background-color:#54b8fa;
+	border-top:1px solid #e1e0e0;
+	border-left:1px solid #e1e0e0;
+	border-right:1px solid #bcbcbc;
+	border-bottom:1px solid #bcbcbc;
+	box-shadow: 1px 1px 0px #e5e5e5;
+	width:932px;
+	height:38px;
+	font-weight:bold;
+	cursor:pointer;
+	line-height:38px;
+	padding-left:15px;
+	margin-bottom:3px;
+	background: -moz-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.14) 50%) #54b8fa; /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(47%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0.14))) #54b8fa; /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 0%) #54b8fa; /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #54b8fa; /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #54b8fa; /* IE10+ */
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #54b8fa; /* W3C */
+}
+.blue_h .domain_lists_block1, .blue_h .domain_lists_block2, .blue_h .domain_lists_block3, .blue_h .domain_lists_block4, .blue_h .domain_lists_block5 {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#221e1f;
+}
+.grey_h {
+	position:relative;
+	border-radius:5px;
+	background-color:#e2e2e2;
+	border-top:1px solid #e1e0e0;
+	border-left:1px solid #e1e0e0;
+	border-right:1px solid #bcbcbc;
+	border-bottom:1px solid #bcbcbc;
+	box-shadow: 1px 1px 0px #e5e5e5;
+	width:932px;
+	height:38px;
+	font-weight:bold;
+	cursor:pointer;
+	line-height:38px;
+	padding-left:15px;
+	margin-bottom:3px;
+	background: -moz-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.14) 50%) #e2e2e2; /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(47%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0.14))) #e2e2e2; /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 0%) #e2e2e2; /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #e2e2e2; /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #e2e2e2; /* IE10+ */
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #e2e2e2; /* W3C */
+}
+.grey_h .domain_lists_block1, .grey_h .domain_lists_block2, .grey_h .domain_lists_block3, .grey_h .domain_lists_block4, .grey_h .domain_lists_block5{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#777576;
+}
+
+
+/* ------------------------------Slide buttons -------------------------------------*/
+
+.slider .expanded_text {display:none;}
+.slider.expanded .expanded_text {display:inline;}
+.slider .collapsed_text {display:inline;}
+.slider.expanded .collapsed_text {display:none;}
+.slide {display:none;}
+
+.progress_lite {
+	opacity: 0.4;
+}
+
+.yellow_h_slide {
+	position:relative;
+	background:url(../common/plus.png) no-repeat 915px 10px;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#221e1f;
+	border-radius:5px;
+	background-color:#ffe75e;
+	border-top:1px solid #e1e0e0;
+	border-left:1px solid #e1e0e0;
+	order-right:1px solid #bcbcbc;
+
+	border-bottom:1px solid #bcbcbc;
+	box-shadow: 1px 1px 0px #e5e5e5;
+	width:932px;
+	height:38px;
+	font-weight:bold;
+	cursor:pointer;
+	line-height:38px;
+	padding-left:15px;
+	margin-bottom:3px;
+	background:url(../common/plus.png) no-repeat 915px 10px, -moz-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.14) 50%) #ffe860  no-repeat 915px 10px; /* FF3.6+ */
+	background:url(../common/plus.png) no-repeat 915px 10px, -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0.14))) #ffe860; /* Chrome,Safari4+ */
+	background:url(../common/plus.png) no-repeat 915px 10px, -webkit-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #ffe860; /* Chrome10+,Safari5.1+ */
+	background:url(../common/plus.png) no-repeat 915px 10px, -o-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #ffe860; /* Opera 11.10+ */
+	background:url(../common/plus.png) no-repeat 915px 10px, -ms-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #ffe860; /* IE10+ */
+	background:url(../common/plus.png) no-repeat 915px 10px, linear-gradient(to bottom, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #ffe860; /* W3C */
+}
+.yellow_h_slide.expanded {
+	background:url(../common/minus.png) no-repeat 915px 10px #ffe860;
+	background:url(../common/minus.png) no-repeat 915px 10px, -moz-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.14) 50%) #ffe860; /* FF3.6+ */
+	background:url(../common/minus.png) no-repeat 915px 10px, -webkit-gradient(linear, left top, left bottom, color-stop(47%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0.14))) #ffe860; /* Chrome,Safari4+ */
+	background:url(../common/minus.png) no-repeat 915px 10px, -webkit-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 0%) #ffe860; /* Chrome10+,Safari5.1+ */
+	background:url(../common/minus.png) no-repeat 915px 10px, -o-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #ffe860; /* Opera 11.10+ */
+	background:url(../common/minus.png) no-repeat 915px 10px, -ms-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #ffe860; /* IE10+ */
+	background:url(../common/minus.png) no-repeat 915px 10px, linear-gradient(to bottom, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #ffe860; /* W3C */
+	behavior: url(js/PIE.php);
+}
+.green_h_slide {
+	position:relative;
+	background:url(../common/plus.png) no-repeat 915px 10px;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	cursor:pointer;
+	color:#221e1f;
+	border-radius:5px;
+	background-color:#70bc3f;
+	border-top:1px solid #e1e0e0;
+	border-left:1px solid #e1e0e0;
+	border-right:1px solid #bcbcbc;
+	border-bottom:1px solid #bcbcbc;
+	box-shadow: 1px 1px 0px #e5e5e5;
+	width:932px;
+	height:38px;
+	font-weight:bold;
+	cursor:pointer;
+	line-height:38px;
+	padding-left:15px;
+	margin-bottom:3px; 
+
+	background:url(../common/plus.png) no-repeat 915px 10px, -moz-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.14) 50%) #70bc3f; /* FF3.6+ */
+	background:url(../common/plus.png) no-repeat 915px 10px, -webkit-gradient(linear, left top, left bottom, color-stop(47%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0.14))) #70bc3f; /* Chrome,Safari4+ */
+	background:url(../common/plus.png) no-repeat 915px 10px, -webkit-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 0%) #70bc3f; /* Chrome10+,Safari5.1+ */
+	background:url(../common/plus.png) no-repeat 915px 10px, -o-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #70bc3f; /* Opera 11.10+ */
+	background:url(../common/plus.png) no-repeat 915px 10px, -ms-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #70bc3f; /* IE10+ */
+	background:url(../common/plus.png) no-repeat 915px 10px, linear-gradient(to bottom, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #70bc3f; /* W3C */
+}
+.green_h_slide.expanded {
+	background:url(../common/minus.png) no-repeat 915px 10px #70bc3f;
+	background:url(../common/minus.png) no-repeat 915px 10px, -moz-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.14) 50%) #70bc3f; /* FF3.6+ */
+	background:url(../common/minus.png) no-repeat 915px 10px, -webkit-gradient(linear, left top, left bottom, color-stop(47%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0.14))) #70bc3f; /* Chrome,Safari4+ */
+	background:url(../common/minus.png) no-repeat 915px 10px, -webkit-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 0%) #70bc3f; /* Chrome10+,Safari5.1+ */
+	background:url(../common/minus.png) no-repeat 915px 10px, -o-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #70bc3f; /* Opera 11.10+ */
+	background:url(../common/minus.png) no-repeat 915px 10px, -ms-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #70bc3f; /* IE10+ */
+	background:url(../common/minus.png) no-repeat 915px 10px, linear-gradient(to bottom, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #70bc3f; /* W3C */
+}
+.grey_h_slide {
+	position:relative;
+	background:url(../common/plus.png) no-repeat 915px 10px;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	cursor:pointer;
+	color:#221e1f;
+	border-radius:5px;
+	background-color:#e2e2e2;
+	border-top:1px solid #e1e0e0;
+	border-left:1px solid #e1e0e0;
+	border-right:1px solid #bcbcbc;
+	border-bottom:1px solid #bcbcbc;
+	box-shadow: 1px 1px 0px #e5e5e5;
+	width:932px;
+	height:38px;
+	font-weight:bold;
+	cursor:pointer;
+	line-height:38px;
+	padding-left:15px;
+	margin-bottom:3px;
+
+	background:url(../common/plus.png) no-repeat 915px 10px, -moz-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.14) 50%) #e2e2e2; /* FF3.6+ */
+	background:url(../common/plus.png) no-repeat 915px 10px, -webkit-gradient(linear, left top, left bottom, color-stop(47%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0.14))) #e2e2e2; /* Chrome,Safari4+ */
+	background:url(../common/plus.png) no-repeat 915px 10px, -webkit-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 0%) #e2e2e2; /* Chrome10+,Safari5.1+ */
+	background:url(../common/plus.png) no-repeat 915px 10px, -o-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #e2e2e2; /* Opera 11.10+ */
+	background:url(../common/plus.png) no-repeat 915px 10px, -ms-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #e2e2e2; /* IE10+ */
+	background:url(../common/plus.png) no-repeat 915px 10px, linear-gradient(to bottom, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #e2e2e2; /* W3C */
+}
+.grey_h_slide.expanded {
+	background:url(../common/minus.png) no-repeat 915px 10px #e2e2e2;
+	background:url(../common/minus.png) no-repeat 915px 10px, -moz-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.14) 50%) #e2e2e2; /* FF3.6+ */
+	background:url(../common/minus.png) no-repeat 915px 10px, -webkit-gradient(linear, left top, left bottom, color-stop(47%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0.14))) #e2e2e2; /* Chrome,Safari4+ */
+	background:url(../common/minus.png) no-repeat 915px 10px, -webkit-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 0%) #e2e2e2; /* Chrome10+,Safari5.1+ */
+	background:url(../common/minus.png) no-repeat 915px 10px, -o-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #e2e2e2; /* Opera 11.10+ */
+	background:url(../common/minus.png) no-repeat 915px 10px, -ms-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #e2e2e2; /* IE10+ */
+	background:url(../common/minus.png) no-repeat 915px 10px, linear-gradient(to bottom, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #e2e2e2; /* W3C */
+}
+.red_h_slide {
+	position:relative;
+	background:url(../common/plus.png) no-repeat 915px 10px;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	cursor:pointer;
+	color:#221e1f;
+	border-radius:5px;
+	background-color:#f22f45;
+	border-top:1px solid #e1e0e0;
+	border-left:1px solid #e1e0e0;
+	border-right:1px solid #bcbcbc;
+	border-bottom:1px solid #bcbcbc;
+	box-shadow: 1px 1px 0px #e5e5e5;
+	width:932px;
+	height:38px;
+	font-weight:bold;
+	cursor:pointer;
+	line-height:38px;
+	padding-left:15px;
+	margin-bottom:3px;
+
+	background:url(../common/plus.png) no-repeat 915px 10px, -moz-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.14) 50%) #f22f45; /* FF3.6+ */
+	background:url(../common/plus.png) no-repeat 915px 10px, -webkit-gradient(linear, left top, left bottom, color-stop(47%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0.14))) #f22f45; /* Chrome,Safari4+ */
+	background:url(../common/plus.png) no-repeat 915px 10px, -webkit-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 0%) #f22f45; /* Chrome10+,Safari5.1+ */
+	background:url(../common/plus.png) no-repeat 915px 10px, -o-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #f22f45; /* Opera 11.10+ */
+	background:url(../common/plus.png) no-repeat 915px 10px, -ms-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #f22f45; /* IE10+ */
+	background:url(../common/plus.png) no-repeat 915px 10px, linear-gradient(to bottom, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #f22f45; /* W3C */
+}
+.red_h_slide.expanded {
+	background:url(../common/minus.png) no-repeat 915px 10px #f22f45;
+	background:url(../common/minus.png) no-repeat 915px 10px, -moz-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.14) 50%) #f22f45; /* FF3.6+ */
+	background:url(../common/minus.png) no-repeat 915px 10px, -webkit-gradient(linear, left top, left bottom, color-stop(47%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0.14))) #f22f45; /* Chrome,Safari4+ */
+	background:url(../common/minus.png) no-repeat 915px 10px, -webkit-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 0%) #f22f45; /* Chrome10+,Safari5.1+ */
+	background:url(../common/minus.png) no-repeat 915px 10px, -o-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #f22f45; /* Opera 11.10+ */
+	background:url(../common/minus.png) no-repeat 915px 10px, -ms-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #f22f45; /* IE10+ */
+	background:url(../common/minus.png) no-repeat 915px 10px, linear-gradient(to bottom, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #f22f45; /* W3C */
+}
+.blue_h_slide {
+	position:relative;
+	background:url(../common/plus.png) no-repeat 915px 10px;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	cursor:pointer;
+	color:#221e1f;
+	border-radius:5px;
+	background-color:#54b8fa;
+	border-top:1px solid #e1e0e0;
+	border-left:1px solid #e1e0e0;
+	border-right:1px solid #bcbcbc;
+	border-bottom:1px solid #bcbcbc;
+	box-shadow: 1px 1px 0px #e5e5e5;
+	width:932px;
+	height:38px;
+	font-weight:bold;
+	cursor:pointer;
+	line-height:38px;
+	padding-left:15px;
+	margin-bottom:3px; 
+
+	background:url(../common/plus.png) no-repeat 915px 10px, -moz-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.14) 50%) #54b8fa; /* FF3.6+ */
+	background:url(../common/plus.png) no-repeat 915px 10px, -webkit-gradient(linear, left top, left bottom, color-stop(47%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0.14))) #54b8fa; /* Chrome,Safari4+ */
+	background:url(../common/plus.png) no-repeat 915px 10px, -webkit-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 0%) #54b8fa; /* Chrome10+,Safari5.1+ */
+	background:url(../common/plus.png) no-repeat 915px 10px, -o-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #54b8fa; /* Opera 11.10+ */
+	background:url(../common/plus.png) no-repeat 915px 10px, -ms-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #54b8fa; /* IE10+ */
+	background:url(../common/plus.png) no-repeat 915px 10px, linear-gradient(to bottom, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #54b8fa; /* W3C */ 
+}
+.blue_h_slide.expanded {
+	background:url(../common/minus.png) no-repeat 915px 10px #54b8fa;
+	background:url(../common/minus.png) no-repeat 915px 10px, -moz-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.14) 50%) #54b8fa; /* FF3.6+ */
+	background:url(../common/minus.png) no-repeat 915px 10px, -webkit-gradient(linear, left top, left bottom, color-stop(47%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0.14))) #54b8fa; /* Chrome,Safari4+ */
+	background:url(../common/minus.png) no-repeat 915px 10px, -webkit-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 0%) #54b8fa; /* Chrome10+,Safari5.1+ */
+	background:url(../common/minus.png) no-repeat 915px 10px, -o-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #54b8fa; /* Opera 11.10+ */
+	background:url(../common/minus.png) no-repeat 915px 10px, -ms-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #54b8fa; /* IE10+ */
+	background:url(../common/minus.png) no-repeat 915px 10px, linear-gradient(to bottom, rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.14) 50%) #54b8fa; /* W3C */
+}
+
+
+
+
+
+
+
+/* -------------------------------------------form------------------------------------------ */
+/*---red checkbox------*/
+.checkbox_1 {
+	display: inline-block;
+	float:left;
+	margin-left:7px;
+	margin-right:7px;
+}
+.checkbox_1 .custom_checkbox_wrapper{
+    background:url("../common/red_btn.png") no-repeat; /*установка картинки на фоне*/
+    height: 32px;
+    display:block;
+	width:81px;
+}
+.checkbox_1 .custom_checkbox_wrapper.checked{
+    background: url("../common/red_btn_on.png") no-repeat;
+}
+.checkbox_1 input {display:none;}
+
+/*---green checkbox------*/
+.checkbox_2 {
+	display: inline-block;
+	float:left;
+	margin-left:7px;
+	margin-right:7px;
+}
+.checkbox_2 .custom_checkbox_wrapper{
+    background:url("../common/green_btn.png") no-repeat; /*установка картинки на фоне*/
+    height: 32px;
+    display:block;
+	width:81px;
+}
+.checkbox_2 .custom_checkbox_wrapper.checked{
+    background: url("../common/green_btn_on.png") no-repeat;
+}
+.checkbox_2 input {display:none;}
+
+
+/*---blue checkbox------*/
+.checkbox_3 {
+	display: inline-block;
+	float:left;
+	margin-left:7px;
+	margin-right:7px;
+}
+.checkbox_3 .custom_checkbox_wrapper{
+    background:url("../common/blue_btn.png") no-repeat; /*установка картинки на фоне*/
+    height: 32px;
+    display:block;
+	width:81px;
+}
+.checkbox_3 .custom_checkbox_wrapper.checked{
+    background: url("../common/blue_btn_on.png") no-repeat;
+}
+.checkbox_3 input {display:none;}
+
+
+/*---custom checkbox------*/
+.checkbox_4 {
+	float:left;
+	margin-left:6px;
+	margin-top:4px;
+	margin-right:9px;
+}
+.checkbox_4 .custom_checkbox_wrapper{
+    background:url("../common/bg_checkbox_1.png") no-repeat; /*установка картинки на фоне*/
+    height: 16px;
+    display:block;
+	width:16px;
+}
+.checkbox_4 .custom_checkbox_wrapper.checked{
+    background: url("../common/bg_checkbox_1.png") no-repeat left bottom;
+}
+.checkbox_4 input {display:none;}
+
+/*---manager checkbox------*/
+.checkbox_5 {
+	display: inline-block;
+	float:left;
+	margin-left:7px;
+	margin-right:7px;
+}
+.checkbox_5 .custom_checkbox_wrapper{
+    background:url("../common/manager_btn.png") no-repeat; /*установка картинки на фоне*/
+    height: 32px;
+    display:block;
+	width:81px;
+}
+.checkbox_5 .custom_checkbox_wrapper.checked{
+    background: url("../common/manager_btn_on.png") no-repeat;
+}
+.checkbox_5 input {display:none;}
+
+/*---retest checkbox------*/
+.checkbox_6 {
+	display: inline-block;
+	float:left;
+	margin-left:7px;
+	margin-right:7px;
+}
+.checkbox_6 .custom_checkbox_wrapper{
+	background:url("../common/orange_btn.png") no-repeat; /*установка картинки на фоне*/
+	height: 32px;
+	display:block;
+	width:81px;
+}
+.checkbox_6 .custom_checkbox_wrapper.checked{
+	background: url("../common/orange_btn_on.png") no-repeat;
+}
+.checkbox_6 input {display:none;}
+
+/*customized select*/
+.select_block {position:relative;}
+.select_block span {height:27px; line-height:27px; padding-left:5px; display:block; position:relative; z-index:1;}
+.select_block select {width:100%; height:27px; display:block; position:absolute; elevation:0px; top:0px; z-index:2;}
+
+
+
+.log_pass_bg {
+	background-image:url(../common/log_pass_input.png);
+	background-repeat:no-repeat;
+	width:255px;
+	height:28px;
+	margin-top:3px;
+	margin-bottom:12px;
+}
+.log_pass_input {
+	border:none;
+	background-color:transparent;
+	width:245px;
+	padding:5px;
+}
+.login_btn_green {
+	background-image:url(../common/login_btn_green.png);
+	background-repeat:no-repeat;
+	width:102px;
+	height:32px;
+	line-height:32px;
+	color:#f2f2f2;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+	border:0px;
+	cursor:pointer;
+	background-color:transparent;
+	margin-top:5px;
+	overflow:auto;
+}
+.errorMsg {
+	background: none repeat scroll 0 0 red;
+    color: white;
+    height: 20px;
+    padding-bottom: 5px;
+	padding-top: 5px;
+	padding-left: 5px;
+    text-align: left;
+	width:250px;
+	margin-top:3px;
+	border-radius:3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+}
+
+.comment_textarea{
+	width:951px;
+	height:112px;
+	background-image:url(../common/textarea.jpg);
+	background-repeat:no-repeat;
+	height:112px;
+}
+.select_issue_category {
+	float:right;
+}
+.textarea{
+	width:939px;
+	height:95px;
+	resize:none;
+	border:none;
+	margin-top:10px;
+	margin-left:10px;
+	margin-right:10px;
+	margin-bottom:10px;
+	background-color:transparent;
+
+}
+.checkbox {
+
+}
+.submit_btn_green {
+	background-image:url(../common/submit_btn_green.png);
+	background-repeat:no-repeat;
+	width:122px;
+	height:32px;
+	line-height:32px;
+	color:#f2f2f2;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+	border:0px;
+	cursor:pointer;
+	background-color:transparent;
+	margin-top:5px;
+	float:right;
+	overflow:auto;
+}
+
+.submit_btn_retest {
+	background-image:url(../common/submit_btn_green.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+	width:195px;
+	height:32px;
+	line-height:32px;
+	color:#f2f2f2;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+	border:0px;
+	cursor:pointer;
+	background-color:transparent;
+	margin-top:5px;
+	float: left;
+	overflow:auto;
+}
+
+.submit_btn_audit {
+	background-image:url(../common/submit_btn_green.png);
+	background-repeat:no-repeat;
+	background-size: 244px 32px;
+	width:244px;
+	height:32px;
+	line-height:32px;
+	color:#f2f2f2;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+	border:0px;
+	cursor:pointer;
+	background-color:transparent;
+	margin-top:5px;
+	float: left;
+	overflow:auto;
+}
+
+.search_block {position:absolute;margin-left:220px;margin-top:13px;width:255px;height:32px;background-image:url(../common/search_block.png);background-repeat:no-repeat;}
+.search_input {width:210px;height:27px;margin-top:3px;margin-left:8px;background-color:transparent;border:none;line-height:27px;position:absolute;}
+
+.b-top {z-index:2600;position:fixed;padding-top:2%;width:0;opacity: 0.5;filter:alpha(opacity=50);}
+.b-top:hover {opacity:1;filter:alpha(opacity=100);cursor:pointer;}
+.b-top-but {z-index:2600;position:absolute;display:block;right: 58px;bottom:0;margin:0 0 0 100%;padding:10px 12px 10px;
+			color:white;background:#52A0D7 no-repeat 50% 11px;border-radius:7px;}
+
+.submit_issue {width:349px;}
+.submit_pass_issue {width:81px;}
+.issue_input {border:none;background-color:transparent;width:340px;margin-left:5px;margin-right:5px;height:32px;line-height:32px;}
+
+.scrollup{
+    width:40px;
+    height:40px;
+    opacity:0.3;
+    position:fixed;
+    bottom:50px;
+    left:100px;
+    display:none;
+    text-indent:-9999px;
+    background: url('../common/icon_top.png') no-repeat;
+}

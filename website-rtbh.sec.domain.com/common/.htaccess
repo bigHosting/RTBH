@@ -1,0 +1,2 @@
+Options -Indexes
+php_value display_errors 0

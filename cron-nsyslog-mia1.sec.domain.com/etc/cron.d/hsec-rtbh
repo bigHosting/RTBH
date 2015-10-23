@@ -1,0 +1,32 @@
+#
+# Managed by Ansible
+#
+
+# MAIL graylog graylog2.sec.domain.com
+*/2 * * * * root /localservices/sbin/rtbh-block.pl  -d graylog-mail -i 5001 -t 3600 -p rtbh-mail.php  -v 0 > /dev/null 2>&1
+
+# Security graylog graylog1.sec.domain.com
+*/2 * * * * root /localservices/sbin/rtbh-block.pl  -d graylog-afm-drop-ipi -i 5001 -t 3600 -p rtbh-afm-drop.php  -v 0 > /dev/null 2>&1
+*/2 * * * * root /localservices/sbin/rtbh-block.pl  -d graylog-asm          -i 5001 -t 3600 -p rtbh-asm.php       -v 0 > /dev/null 2>&1
+*/2 * * * * root /localservices/sbin/rtbh-block.pl  -d graylog-shell        -i 100  -t 3600 -p rtbh-shell.php     -v 0 > /dev/null 2>&1
+
+*/2 * * * * root /localservices/sbin/rtbh-asm-violations.pl  > /dev/null 2>&1
+
+# Web graylog graylog.domain.com
+*/2 * * * * root /localservices/sbin/rtbh-block.pl  -d graylog-web-wp-login   -i 5001  -t 3600  -p rtbh-web.php   -v 0 -f wp-login.php   -m POST  > /dev/null 2>&1
+*/2 * * * * root /localservices/sbin/rtbh-block.pl  -d graylog-web-admin-ajax -i 5001  -t 3600  -p rtbh-web.php   -v 0 -f admin-ajax.php -m POST  > /dev/null 2>&1
+*/2 * * * * root /localservices/sbin/rtbh-block.pl  -d graylog-web-indexhtml  -i 10001 -t 3600  -p rtbh-web.php   -v 0 -f index.html     -m GET   > /dev/null 2>&1
+*/2 * * * * root /localservices/sbin/rtbh-block.pl  -d graylog-web-indexphp   -i 10001 -t 3600  -p rtbh-web.php   -v 0 -f index.php      -m GET   > /dev/null 2>&1
+*/2 * * * * root /localservices/sbin/rtbh-block.pl  -d graylog-web-ftpchk3    -i 11    -t 86300 -p rtbh-web.php   -v 0 -f ftpchk3.php    -m GET   > /dev/null 2>&1
+
+*/2 * * * * root /localservices/sbin/rtbh-block.pl  -d graylog-web-ua-dash    -i 5001  -t 3600  -p rtbh-web-ua-dash.php  -v 0  > /dev/null 2>&1
+*/2 * * * * root /localservices/sbin/rtbh-block.pl  -d graylog-web-ua-flash   -i 5001  -t 3600  -p rtbh-web-ua-flash.php -v 0  > /dev/null 2>&1
+
+# Tornet every 8 hours
+0 */8 * * * root /localservices/sbin/rtbh-tornet.pl  > /dev/null 2>&1
+
+
+# AlienVault
+*/2 * * * * root /localservices/sbin/rtbh-block.pl  -d AlienVaultSource       -i 1  -t 3600  -p rtbh-AV-source.php      -v 0  > /dev/null 2>&1
+*/2 * * * * root /localservices/sbin/rtbh-block.pl  -d AlienVaultDestination  -i 1  -t 3600  -p rtbh-AV-destination.php -v 0  > /dev/null 2>&1
+

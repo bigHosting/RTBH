@@ -1,0 +1,9 @@
+[IP] 10.70.17.2 [QUERY] SELECT id, inet6_ntop(sourceip) as sourceip, cidr, type, inserttime, expiretime, hits, country, comment, insertby, allow_edit FROM `temp_whitelist`;
+[IP] 10.70.17.2 [QUERY] SELECT id, inet6_ntop(sourceip) as sourceip, cidr, type, inserttime, expiretime, hits, country, comment, insertby, allow_edit FROM `blacklist` WHERE inet6_ntop(`sourceip`) LIKE '75.145.237.46';
+[IP] 10.70.17.2 [QUERY] SELECT id, inet6_ntop(sourceip) as sourceip, cidr, type, inserttime, expiretime, hits, country, comment, insertby, allow_edit FROM `blacklist` WHERE inet6_ntop(`sourceip`) LIKE '1.2.3.4';
+[IP] 10.70.17.2 [QUERY] SELECT id, inet6_ntop(sourceip) as sourceip, cidr, type, inserttime, expiretime, hits, country, comment, insertby, allow_edit FROM `blacklist` WHERE inet6_ntop(`sourceip`) LIKE '1.2.3.5';
+[IP] 10.70.17.2 [QUERY] SELECT id, inet6_ntop(sourceip) as sourceip, cidr, type, inserttime, expiretime, hits, country, comment, insertby, allow_edit FROM `blacklist` WHERE inet6_ntop(`sourceip`) LIKE '1.2.3.5';
+[IP] 10.70.17.2 [QUERY] SELECT id, inet6_ntop(sourceip) as sourceip, cidr, type, inserttime, expiretime, hits, country, comment, insertby, allow_edit FROM `temp_whitelist` WHERE inet6_ntop(`sourceip`) LIKE '1.2.3.4';
+[IP] 10.70.17.2 [QUERY] SELECT id, inet6_ntop(sourceip) as sourceip, cidr, type, inserttime, expiretime, hits, country, comment, insertby, allow_edit FROM `blacklist` WHERE inet6_ntop(`sourceip`) LIKE '1.2.3.4';
+[IP] 10.70.17.2 [QUERY] SELECT id, inet6_ntop(sourceip) as sourceip, cidr, type, inserttime, expiretime, hits, country, comment, insertby, allow_edit FROM `blacklist` WHERE inet6_ntop(`sourceip`) LIKE '1.2.3.6';
+[IP] 10.70.17.2 [QUERY] DELETE FROM `blacklist` WHERE `id` = '39583';
