@@ -1,0 +1,114 @@
+# Apply uRPF on ALL Internet Transit facing interfaces
+
+! Example
+interface TenGigE0/0/0/0
+ description COGENT TRANSIT
+ ipv4 verify unicast source reachable-via any allow-default
+ ipv6 verify unicast source reachable-via any allow-default
+
+# Add Null route
+
+router static
+ address-family ipv4 unicast
+  192.0.2.1/32 Null0
+ address-family ipv6 unicast
+  2001:db8::192:0:2:1/128 Null0
+
+# BGPv4 configuration.
+
+community-set blackhole
+  # Blackholed DC1 route
+  YOUR_AS_NUMBER:666
+end-set
+
+router bgp YOUR_AS_NUMBER
+ neighbor X.Y.32.5
+  remote-as YOUR_AS_NUMBER
+  description CRSV1.300 (RTBH)
+  update-source Loopback10
+  address-family ipv4 unicast
+   route-policy RTBH.IN in
+   maximum-prefix 100000 95 restart 1
+   route-policy RTBH.OUT out
+   soft-reconfiguration inbound always
+
+community-set blackhole
+  # Blackholed DC1 route
+  YOUR_AS_NUMBER:666
+end-set
+
+prefix-set default_route
+  0.0.0.0/0
+end-set
+
+prefix-set domain_all
+  # domain All Networks
+  10.0.0.0/8 le 32,
+end-set
+
+route-policy RTBH.IN
+  # Drop domain All networks and default 0.0.0.0 route
+  if destination in domain_all or destination in default_route then
+    drop
+  endif
+  # Allow blackhole community YOUR_AS_NUMBER:666
+  if community matches-any blackhole then
+    set next-hop discard
+  else
+    drop
+  endif
+end-policy
+
+route-policy RTBH.OUT
+  drop
+end-policy
+
+BGPv6 configuration.
+
+community-set blackhole
+  # Blackholed DC1 route
+  YOUR_AS_NUMBER:666
+end-set
+
+neighbor 2001:XXXX:30:5::5
+  remote-as YOUR_AS_NUMBER
+  description CRSV1.300 (RTBH)
+  update-source Loopback10
+  address-family ipv6 unicast
+   route-policy RTBH-V6.IN in
+   maximum-prefix 100000 95 restart 1
+   route-policy RTBH-V6.OUT out
+   soft-reconfiguration inbound always
+
+community-set blackhole
+  # Blackholed DC1 route
+  YOUR_AS_NUMBER:666
+end-set
+
+prefix-set default_route_v6
+  ::/0
+end-set
+
+prefix-set domain_all_v6
+  # domain All IPv6 Networks
+  2001:XXXX::/32 le 128,
+  2a01:YYYY::/32 le 128
+end-set
+
+route-policy RTBH-V6.IN
+  # Drop domain All networks and default ::/0 route
+  if destination in domain_all_v6 or destination in default_route_v6 then
+    drop
+  endif
+  # Allow blackhole community YOUR_AS_NUMBER:666
+  if community matches-any blackhole then
+    set next-hop discard
+  else
+    drop
+  endif
+end-policy
+
+route-policy RTBH-V6.OUT
+  drop
+end-policy
+

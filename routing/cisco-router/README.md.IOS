@@ -1,0 +1,48 @@
+IOS Configuration
+
+Apply uRPF on ALL Internet Transit facing interfaces
+
+! Example
+interface GigabitEthernet0/1
+ description TRANSIT #1
+ ip verify unicast source reachable-via any allow-default
+
+Add Null route
+
+ip route 192.0.2.1 255.255.255.255 Null0
+
+BGP configuration.
+
+router bgp OTHER_AS_NUMBER
+ neighbor X.Y.1.53 remote-as OTHER_AS_NUMBER
+ neighbor X.Y.1.53 description CRSV1.17.DUB (RTBH)
+ neighbor X.Y.1.53 update-source Loopback10
+ address-family ipv4
+  neighbor X.Y.1.53 activate
+  neighbor X.Y.1.53 send-community both
+  neighbor X.Y.1.53 soft-reconfiguration inbound
+  neighbor X.Y.1.53 route-map RTBH.IN in
+  neighbor X.Y.1.53 route-map RTBH.OUT out
+  neighbor X.Y.1.53 maximum-prefix 100000 95 restart 1
+!
+ip prefix-list domain-all description domain All Networks
+ip prefix-list domain-all seq 10 permit 10.0.0.0/8 le 32
+!
+ip prefix-list default-route seq 10 permit 0.0.0.0/0
+!
+ip community-list standard blackhole-dub permit OTHER_AS_NUMBER:666
+!
+route-map RTBH.IN deny 10
+  description Deny default 0.0.0.0 route
+  match ip address prefix-list default-route
+route-map RTBH.IN deny 20
+  description Deny domain Networks
+  match ip address prefix-list domain-all
+route-map RTBH.IN permit 100
+  description allow blackhole-dub community OTHER_AS_NUMBER:666
+  match community blackhole-dub
+route-map RTBH.IN deny 1000
+!
+route-map RTBH.OUT deny 1000
+
+

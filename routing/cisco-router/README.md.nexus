@@ -1,0 +1,86 @@
+# Nexus Configuration
+
+#Apply uRPF on ALL Internet Transit facing interfaces:
+
+! Example
+interface Ethernet2/5
+  description PEER1 TRANSIT
+  ip verify unicast source reachable-via any allow-default
+  ipv6 verify unicast source reachable-via any allow-default
+
+# Add Null route to all EDGE VDC's:
+  ip route 192.0.2.1/32 Null0
+  ipv6 route 2001:db8::192:0:2:1/128 Null0
+
+# BGPv4 configuration:
+  router bgp YOUR_AS_NUMBER_HERE
+     neighbor X.Y.154.5 remote-as YOUR_AS_NUMBER_HERE
+       description CRSV1.50 (RTBH)
+       update-source loopback10
+       address-family ipv4 unicast
+           send-community
+           route-map RTBH.IN in
+           route-map RTBH.OUT out
+           maximum-prefix 100000 95 restart 1
+           soft-reconfiguration inbound
+!
+ip prefix-list domain-all description domain COMPANY Networks
+ip prefix-list domain-all seq 10 permit 10.0.0.0/8 le 32
+!
+ip prefix-list default-route seq 10 permit 0.0.0.0/0
+!
+ip community-list standard blackhole permit YOUR_OTHER_AS_NUMBER:666
+ip community-list standard blackhole-mia permit YOUR_AS_NUMBER:666
+!
+!
+route-map RTBH.IN deny 10
+  description Deny default 0.0.0.0 route
+  match ip address prefix-list default-route
+route-map RTBH.IN deny 20
+  description Deny COMPANY Networks
+  match ip address prefix-list domain-all
+route-map RTBH.IN permit 100
+  description Allow blackhole community YOUR_AS_NUMBER:666
+  match community blackhole
+route-map RTBH.IN deny 1000
+!
+route-map RTBH.OUT deny 1000
+!
+
+
+
+
+
+# BGPv6 configuration:
+router bgp 30447
+ neighbor 2001:ABCD:5050:12::5
+    remote-as YOUR_AS_NUMBER
+    description CRSV1.50 (RTBH)
+    update-source loopback10
+    address-family ipv6 unicast
+      route-map RTBH-V6.IN in
+      route-map RTBH-V6.OUT out
+      maximum-prefix 100000 95 restart 1
+      soft-reconfiguration inbound
+!
+ipv6 prefix-list company-all-v6 description COMPANY All IPv6 Networks
+ipv6 prefix-list company-all-v6 seq 10 permit 2001:XXXX::/32 le 128 
+ipv6 prefix-list company-all-v6 seq 20 permit 2a01:YYYY::/32 le 128
+!
+ipv6 prefix-list default-route-v6 seq 10 permit 0::/0 
+!
+ip community-list standard blackhole permit YOUR_OTHER_AS_NUMBER:666
+ip community-list standard blackhole-mia permit YOUR_AS_NUMBER:666
+!
+route-map RTBH-V6.IN deny 10
+  description Deny default 0::/0 route
+  match ipv6 address prefix-list default-route-v6
+route-map RTBH-V6.IN deny 20
+  description Deny Company Networks
+  match ipv6 address prefix-list company-all-v6
+route-map RTBH-V6.IN permit 100
+  description Allow blackhole community YOUR_AS_NUMNER:666
+  match community blackhole-mia 
+route-map RTBH-V6.IN deny 1000
+route-map RTBH-V6.OUT deny 1000
+

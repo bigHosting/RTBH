@@ -1,0 +1,187 @@
+router bgp 14116
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor RTBH peer-group
+ neighbor RTBH remote-as YOUR_AS_NUMBER
+ neighbor RTBH update-source GigabitEthernet1
+ neighbor RTBH-V6 peer-group
+ neighbor RTBH-V6 remote-as YOUR_AS_NUMBER
+ neighbor RTBH-V6 update-source GigabitEthernet1
+ neighbor 2001:XXXX:10::1 peer-group RTBH-V6
+ neighbor 2001:XXXX:10::1 description EDGE1.151.TOR
+ neighbor 2001:XXXX:20::1 peer-group RTBH-V6
+ neighbor 2001:XXXX:20::1 description EDGE1.20.TOR
+ neighbor 2001:XXXX:20::2 peer-group RTBH-V6
+ neighbor 2001:XXXX:20::2 description EDGE2.20.TOR
+ neighbor 2001:XXXX:30::1 peer-group RTBH-V6
+ neighbor 2001:XXXX:30::1 description EDGE1.300.TOR
+ neighbor 2001:XXXX:30::2 peer-group RTBH-V6
+ neighbor 2001:XXXX:30::2 description EDGE2.300.TOR
+ neighbor 2001:XXXX:30:16:0:1:0:1 remote-as 65533
+ neighbor 2001:XXXX:30:16:0:1:0:1 description rtbh-tor1.sec.domain.com 
+ neighbor 2001:XXXX:30:16:0:1:0:1 ebgp-multihop 255
+ neighbor X.Y.100.29 remote-as 65533
+ neighbor X.Y.100.29 description rtbh-tor1.sec.domain.com
+ neighbor X.Y.100.29 ebgp-multihop 255
+ neighbor X.Y.188.1 peer-group RTBH
+ neighbor X.Y.188.1 description EDGE1.20.TOR
+ neighbor X.Y.188.2 peer-group RTBH
+ neighbor X.Y.188.2 description EDGE2.20.TOR
+ neighbor X.Y.39.16 peer-group RTBH
+ neighbor X.Y.39.16 description EDGE1.151.TOR
+ neighbor X.Y.39.17 peer-group RTBH
+ neighbor X.Y.39.17 description EDGE2.300.TOR
+ neighbor X.Y.39.20 peer-group RTBH
+ neighbor X.Y.39.20 description EDGE1.300.TOR
+ !
+ address-family ipv4
+  redistribute static route-map RTBH-STATIC
+  neighbor RTBH send-community
+  neighbor RTBH route-reflector-client
+  neighbor RTBH soft-reconfiguration inbound
+  neighbor RTBH route-map DENY.ALL in
+  neighbor RTBH route-map RTBH.OUT out
+  neighbor X.Y.100.29 activate
+  neighbor X.Y.100.29 remove-private-as all
+  neighbor X.Y.100.29 soft-reconfiguration inbound
+  neighbor X.Y.100.29 route-map RTBH-BIRD.IN in
+  neighbor X.Y.100.29 route-map DENY.ALL out
+  neighbor X.Y.188.1 activate
+  neighbor X.Y.188.2 activate
+  neighbor X.Y.39.16 activate
+  neighbor X.Y.39.17 activate
+  neighbor X.Y.39.20 activate
+ exit-address-family
+ !
+ address-family ipv6
+  redistribute static route-map RTBH-STATIC-V6
+  neighbor RTBH-V6 send-community
+  neighbor RTBH-V6 route-reflector-client
+  neighbor RTBH-V6 soft-reconfiguration inbound
+  neighbor RTBH-V6 route-map DENY.ALL in
+  neighbor RTBH-V6 route-map RTBH-V6.OUT out
+  neighbor 2001:XXXX:10::1 activate
+  neighbor 2001:XXXX:20::1 activate
+  neighbor 2001:XXXX:20::2 activate
+  neighbor 2001:XXXX:30::1 activate
+  neighbor 2001:XXXX:30::2 activate
+  neighbor 2001:XXXX:30:16:0:1:0:1 activate
+  neighbor 2001:XXXX:30:16:0:1:0:1 remove-private-as all
+  neighbor 2001:XXXX:30:16:0:1:0:1 soft-reconfiguration inbound
+  neighbor 2001:XXXX:30:16:0:1:0:1 route-map RTBH-BIRD-V6.IN in
+  neighbor 2001:XXXX:30:16:0:1:0:1 route-map DENY.ALL out
+ exit-address-family
+!
+ip bgp-community new-format
+ip community-list standard blackhole permit YOUR_AS_NUMBER:666
+!
+ip prefix-list 32only permit 0.0.0.0/0 le 31
+!
+ip prefix-list default-route permit 0.0.0.0/0
+!
+ip prefix-list domain-all description domain All Networks
+ip prefix-list domain-all permit 10.0.0.0/8 le 32
+!
+ipv6 prefix-list 128only permit ::/0 le 127
+!
+ipv6 prefix-list default-route-v6 permit ::/0
+!
+ipv6 prefix-list domain-all-v6 description domain All IPv6 Networks
+ipv6 prefix-list domain-all-v6 permit 2001:XXXX::/32 le 128
+ipv6 prefix-list domain-all-v6 permit 2A01:XXXX::/32 le 128
+!
+route-map DENY.ALL deny 10
+!
+!
+route-map RTBH-BIRD-V6.IN deny 10
+ description Deny default route
+ match ipv6 address prefix-list default-route-v6
+!
+route-map RTBH-BIRD-V6.IN deny 20
+ description Deny domain Networks
+ match ipv6 address prefix-list domain-all-v6
+!
+route-map RTBH-BIRD-V6.IN deny 30
+ description Deny non-host routes
+ match ipv6 address prefix-list 128only
+!
+route-map RTBH-BIRD-V6.IN permit 100
+ match community blackhole-tor
+ set local-preference 1000
+ set origin igp
+ set community YOUR_AS_NUMBER:666
+ set ipv6 next-hop 2001:DB8::192:0:2:1
+!
+route-map RTBH-BIRD.IN deny 10
+ description Deny default route
+ match ip address prefix-list default-route
+!
+route-map RTBH-BIRD.IN deny 20
+ description Deny domain Networks
+ match ip address prefix-list domain-all
+!
+route-map RTBH-BIRD.IN deny 30
+ match ip address prefix-list 32only
+!
+route-map RTBH-BIRD.IN permit 100
+ match community blackhole-tor
+ set local-preference 1000
+ set origin igp
+ set community YOUR_AS_NUMBER:666
+ set ip next-hop 192.0.2.1
+!
+route-map RTBH-STATIC deny 10
+ description Deny default 0.0.0.0 route
+ match ip address prefix-list default-route
+!
+route-map RTBH-STATIC deny 20
+ description Deny domain Networks
+ match ip address prefix-list domain-all
+!
+route-map RTBH-STATIC deny 30
+ match ip address prefix-list 32only
+!
+route-map RTBH-STATIC permit 100
+ match tag 666
+ set local-preference 1000
+ set origin igp
+ set community YOUR_AS_NUMBER:666 no-export
+ set ip next-hop 192.0.2.1
+!
+route-map RTBH-STATIC deny 1000
+!
+route-map RTBH-STATIC-V6 deny 10
+ description Deny default route
+ match ipv6 address prefix-list default-route-v6
+!
+route-map RTBH-STATIC-V6 deny 20
+ description Deny domain Networks
+ match ipv6 address prefix-list domain-all-v6
+!
+route-map RTBH-STATIC-V6 deny 30
+ match ipv6 address prefix-list 128only
+!
+route-map RTBH-STATIC-V6 permit 100
+ match tag 666
+ set local-preference 1000
+ set origin igp
+ set community YOUR_AS_NUMBER:666 no-export
+ set ipv6 next-hop 2001:DB8::192:0:2:1
+!
+route-map RTBH-STATIC-V6 deny 1000
+!
+route-map RTBH-V6.OUT permit 10
+ match community blackhole-tor
+ set community no-export no-advertise additive
+!
+route-map RTBH.OUT permit 10
+ match community blackhole-tor
+ set community no-export no-advertise additive
+!
+
+Adding the following route will advertise and block hole the route across the entire edge.
+
+! Example
+ip route 94.23.251.90 255.255.255.255 Null0 tag 666
+ipv6 route 2a00:bc00:8801:104:5456:88ae:4fae:d0d1/128 null 0 tag 666
+
